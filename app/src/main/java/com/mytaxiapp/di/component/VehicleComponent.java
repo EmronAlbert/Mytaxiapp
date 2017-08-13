@@ -17,6 +17,6 @@ import dagger.Component;
 @Component(dependencies = NetComponent.class, modules = {RetrofitModule.class, VehicleModule.class})
 public interface VehicleComponent {
 
-
+    void inject(MainActivity mainActivity);
 
 }
