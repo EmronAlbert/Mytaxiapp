@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -101,16 +102,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
             googleMap.getUiSettings().setMapToolbarEnabled(false);
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(marker.getPosition(), 16));
-
-            googleMap.setOnCameraMoveListener(new GoogleMap.OnCameraMoveListener() {
-                @Override
-                public void onCameraMove() {
-                    CameraPosition cameraPosition = googleMap.getCameraPosition();
-                    if(cameraPosition.zoom == 16.0) {
-
-                    }
-                }
-            });
 
             if(address.get(position) != null & names.get(position) != null) {
                 updateMarker(latlngs.get(position), address.get(position), names.get(position));

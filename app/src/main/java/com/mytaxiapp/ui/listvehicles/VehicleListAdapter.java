@@ -130,12 +130,10 @@ public class VehicleListAdapter
     }
 
     public void addAll(List<Placemark> data){
-        //placemarks.addAll(data);
         notifyDataSetChanged();
     }
 
     public void add(Placemark data){
-        //placemarks.addAll(data);
         notifyDataSetChanged();
         placemarks.add(data);
     }

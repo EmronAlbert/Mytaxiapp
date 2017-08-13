@@ -1,8 +1,7 @@
 package com.mytaxiapp.ui.map;
 
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
@@ -17,7 +16,6 @@ import com.mytaxiapp.data.model.Placemark;
 import com.mytaxiapp.data.remote.VehicleInterface;
 import com.mytaxiapp.di.component.VehicleComponent;
 import com.mytaxiapp.ui.base.BaseActivity;
-import com.mytaxiapp.ui.listvehicles.VehicleListAdapter;
 import com.mytaxiapp.ui.listvehicles.VehiclePresenter;
 import com.mytaxiapp.ui.listvehicles.VehicleView;
 import com.mytaxiapp.util.Logger;
@@ -48,6 +46,7 @@ public class MapActivity extends BaseActivity implements VehicleView {
     private String LATLNG = "latlng";
     private String ADDRESS = "address";
     private String NAMES = "names";
+    private String POSITION = "position";
     private int adapterPosition = 0;
 
     @Override
@@ -115,6 +114,7 @@ public class MapActivity extends BaseActivity implements VehicleView {
             arguments.putParcelableArrayList(LATLNG, latlngs);
             arguments.putStringArrayList(ADDRESS, address);
             arguments.putStringArrayList(NAMES, names);
+            arguments.putInt(POSITION, adapterPosition);
             MapFragment fragment = new MapFragment();
             fragment.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()
