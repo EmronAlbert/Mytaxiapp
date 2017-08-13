@@ -44,6 +44,10 @@ public class MapFragmentTest {
 
     @Test
     public void mapFragmentTest() {
+
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        waitFor(5000); // wait for UI to be properly loaded
+
         ViewInteraction recyclerView = onView(
                 allOf(withId(R.id.vehicles_recyclerview),
                         withParent(allOf(withId(R.id.main_layout),
