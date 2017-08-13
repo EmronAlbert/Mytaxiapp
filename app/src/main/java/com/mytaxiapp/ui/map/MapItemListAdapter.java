@@ -41,13 +41,11 @@ public class MapItemListAdapter
     public void onBindViewHolder(final ViewHolder holder, int position) {
         final Placemark model = (Placemark) placemarks.get(position);
 
-        //holder.textAddress.setText(model.getAddress());
         holder.textName.setText(model.getName());
 
         final LatLng latlngs = new LatLng(model.getCoordinates().get(1), model.getCoordinates().get(0));
         final String title  = model.getAddress().toString();
         final String snippet  = model.getName().toString();
-        holder.taxtiImage.setSelected(!holder.taxtiImage.isSelected());
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +56,6 @@ public class MapItemListAdapter
                 if(fragment != null) {
                     fragment.updateMarker(latlngs, title, snippet);
                 }
-
 
             }
         });
