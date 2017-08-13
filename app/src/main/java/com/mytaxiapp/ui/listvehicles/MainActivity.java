@@ -1,5 +1,6 @@
 package com.mytaxiapp.ui.listvehicles;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
@@ -131,6 +132,11 @@ public class MainActivity extends BaseActivity implements VehicleView {
             mCompositeSubscription.unsubscribe();
         }
         super.onDestroy();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
 }

@@ -1,5 +1,6 @@
 package com.mytaxiapp.ui.listvehicles;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -118,7 +119,9 @@ public class VehicleListAdapter
                 Context context = v.getContext();
                 Intent intent = new Intent(context, MapActivity.class);
                 intent.putExtra("position", holder.getAdapterPosition());
-                context.startActivity(intent);
+                Activity activity = (Activity) v.getContext();
+                activity.startActivityForResult(intent, 500);
+                activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
