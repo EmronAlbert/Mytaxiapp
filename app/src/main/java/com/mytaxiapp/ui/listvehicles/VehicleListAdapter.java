@@ -115,7 +115,10 @@ public class VehicleListAdapter
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                Context context = v.getContext();
+                Intent intent = new Intent(context, MapActivity.class);
+                intent.putExtra("position", holder.getAdapterPosition());
+                context.startActivity(intent);
             }
         });
 
