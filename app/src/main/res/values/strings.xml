@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">mytaxi</string>
     <string name="map_activity">Select your vehicle</string>
-    
+
     <!-- no connection -->
     <string name="no_connection_snackbar">No connection !</string>
     <string name="snackbar_action_retry">Retry</string>

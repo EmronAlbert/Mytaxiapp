@@ -18,5 +18,6 @@ import dagger.Component;
 public interface VehicleComponent {
 
     void inject(MainActivity mainActivity);
+    void inject(MapActivity mapActivity);
 
 }

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="15dp"
+    android:orientation="vertical">
+
+    <!--<TextView-->
+        <!--android:id="@+id/id"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAppearance="?attr/textAppearanceListItem" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/content"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="@dimen/text_margin"-->
+        <!--android:textAppearance="?attr/textAppearanceListItem" />-->
+
+    <ImageView
+        android:id="@+id/taxi_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_taxi_medium"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HH-GO8522"/>
+
+    <View
+        android:id="@+id/linebar"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorSeparator"/>
+
+</LinearLayout>
