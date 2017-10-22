@@ -46,7 +46,9 @@ public class VehiclePresenter extends BasePresenter<VehicleView> {
 
     public void getVehicleList(VehicleInterface vehicleInterface, CompositeSubscription mCompositeSubscription){
 
-        getMvpView().showLoading();
+        if(isViewAttached()) {
+            getMvpView().showLoading();
+        }
 
         mCompositeSubscription.add(vehicleInteractor.fetchVehicles(vehicleInterface)
                 .subscribeOn(Schedulers.io())
@@ -55,11 +57,13 @@ public class VehiclePresenter extends BasePresenter<VehicleView> {
                     @Override
                     public void call(Vehicles vehicles) {
 
-                        getMvpView().hideLoading();
-                        Vehicles vList = vehicles;
+                        if(isViewAttached()) {
+                            getMvpView().hideLoading();
+                            Vehicles vList = vehicles;
 
-                        ArrayList<Placemark> vehicleItemList = new ArrayList<Placemark>(vList.getPlacemarks());
-                        getMvpView().setAdapter(vehicleItemList);
+                            ArrayList<Placemark> vehicleItemList = new ArrayList<Placemark>(vList.getPlacemarks());
+                            getMvpView().setAdapter(vehicleItemList);
+                        }
 
                     }
                 }, new Action1<Throwable>() {
