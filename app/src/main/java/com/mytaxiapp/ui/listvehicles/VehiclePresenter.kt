@@ -35,17 +35,20 @@ class VehiclePresenter(private val application: Application, private val vehicle
 
     fun getVehicleList(vehicleInterface: VehicleInterface, mCompositeSubscription: CompositeSubscription) {
 
-        mvpView!!.showLoading()
+        if(isViewAttached) {
+            mvpView!!.showLoading()
+        }
 
         mCompositeSubscription.add(vehicleInteractor.fetchVehicles(vehicleInterface)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ vehicles ->
-                    mvpView!!.hideLoading()
-                    val vList = vehicles
-
-                    val vehicleItemList = ArrayList(vList.placemarks!!)
-                    mvpView!!.setAdapter(vehicleItemList)
+                    if(isViewAttached) {
+                        mvpView!!.hideLoading()
+                        val vList = vehicles
+                        val vehicleItemList = ArrayList(vList.placemarks!!)
+                        mvpView!!.setAdapter(vehicleItemList)
+                    }
                 }) { throwable -> logger.debug(throwable.localizedMessage) })
 
     }
