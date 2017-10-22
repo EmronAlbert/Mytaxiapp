@@ -4,13 +4,7 @@ The map zooms and centers on a specific vehicle when it is selected in the previ
 
 The First Display list items is filled with some useful vehicle-information provided by a JSON response.
 
-
-
-| The app uses   
-| ------------- |:--------------:| ----------------:|
-| Google Maps Android API v2     | RxJava           |
-| MVP architectural pattern      | Dagger 2         |
-| Retrofit      |     Glide      |    Apache Common |
+The app uses Google Maps Android API v2, MVP architectural pattern, RxJava, Dagger 2, Retrofit, Glide and Apache Commons.
 
 Screenshots Below:
 
