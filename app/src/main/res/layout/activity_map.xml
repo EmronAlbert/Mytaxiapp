@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.mytaxiapp.ui.map.MapActivity">
+    tools:mContext="com.mytaxiapp.ui.map.MapActivity">
 
     <com.mytaxiapp.util.ui.MaterialProgressBar
         android:id="@+id/material_progress_bar"

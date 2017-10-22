@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 25
@@ -20,6 +22,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dexOptions {
+        javaMaxHeapSize "2048M"
+    }
+}
+
+kapt {
+    generateStubs = true
 }
 
 ext {
@@ -57,7 +66,7 @@ dependencies {
     compile "io.reactivex:rxjava:${rxjava}"
 
     // DI
-    apt "com.google.dagger:dagger-compiler:${daggerVer}"
+    kapt "com.google.dagger:dagger-compiler:${daggerVer}"
     compile "com.google.dagger:dagger:${daggerVer}"
     provided "javax.annotation:jsr250-api:${javaxVer}"
 
@@ -72,6 +81,9 @@ dependencies {
 
     // Apache Commons
     compile "commons-lang:commons-lang:${apacheCommons}"
+
+    // kotlin jre
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
     // Tests
     androidTestCompile("com.android.support.test.espresso:espresso-core:${espressoVer}", {

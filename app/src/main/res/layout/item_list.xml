@@ -7,7 +7,7 @@
     android:divider="?android:attr/dividerHorizontal"
     android:orientation="horizontal"
     android:showDividers="middle"
-    tools:context="com.mytaxiapp.ui.map.MapActivity">
+    tools:mContext="com.mytaxiapp.ui.map.MapActivity">
 
 
     <android.support.v7.widget.RecyclerView
@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layoutManager="LinearLayoutManager"
-        tools:context="com.example.tosin.myapplication.ItemListActivity"
+        tools:mContext="com.example.tosin.myapplication.ItemListActivity"
         tools:listitem="@layout/item_list_content" />
 
 
