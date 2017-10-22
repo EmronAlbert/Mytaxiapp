@@ -122,7 +122,7 @@ class MainActivity : BaseActivity(), VehicleView {
         super.onDestroy()
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
     }
 
